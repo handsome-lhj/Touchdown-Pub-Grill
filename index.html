@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Home of the Touchdown Platter</title>
+    <title>Touchdown Pub and Grill | The Flame & The Game</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
@@ -18,29 +18,65 @@
             color: var(--char-charcoal);
             font-family: 'Inter', sans-serif;
         }
-        .bg-sizzle { background-color: var(--sizzle-orange); }
-        .text-sizzle { color: var(--sizzle-orange); }
-        .bg-char { background-color: var(--char-charcoal); }
-        .bg-mustard { background-color: var(--mustard-yellow); }
         
-        .hero-gradient {
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&q=80&w=1920');
+        /* Slideshow Container */
+        .hero-slider {
+            position: relative;
+            height: 100vh;
+            width: 100%;
+            overflow: hidden;
+            background-color: black;
+        }
+
+        .slide {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out;
             background-size: cover;
             background-position: center;
         }
-        .sticky-nav {
-            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+
+        .slide.active {
+            opacity: 1;
         }
+
+        /* Dark overlay to make text pop */
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7));
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .bg-sizzle { background-color: var(--sizzle-orange); }
+        .text-sizzle { color: var(--sizzle-orange); }
+        .text-mustard { color: var(--mustard-yellow); }
+        .bg-char { background-color: var(--char-charcoal); }
+        .bg-mustard { background-color: var(--mustard-yellow); }
+        
+        .sticky-nav { box-shadow: 0 -2px 10px rgba(0,0,0,0.1); }
     </style>
 </head>
 <body class="pb-20">
 
-    <header class="hero-gradient h-screen flex flex-col items-center justify-center text-center text-white px-4">
-        <h1 class="text-5xl md:text-7xl font-black mb-4 uppercase tracking-tighter">The Home of the <span class="text-mustard">Touchdown Pub and Grill</span></h1>
-        <p class="text-xl mb-8 max-w-2xl font-light">Experience the flame, the game, and the vibe. Best grilled meats in the city.</p>
-        <a href="https://wa.me/0966414149" class="bg-sizzle hover:scale-105 transition-transform px-8 py-4 rounded-full text-lg font-bold flex items-center gap-2">
-            <i class="fab fa-whatsapp text-2xl"></i> ORDER VIA WHATSAPP
-        </a>
+    <header class="hero-slider">
+        <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&q=80&w=1920')"></div>
+        <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?auto=format&fit=crop&q=80&w=1920')"></div>
+        <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&q=80&w=1920')"></div>
+        <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1543007630-9710e4a00a20?auto=format&fit=crop&q=80&w=1920')"></div>
+
+        <div class="hero-overlay text-center text-white px-4">
+            <h1 class="text-5xl md:text-7xl font-black mb-4 uppercase tracking-tighter">The Home of the <span class="text-mustard">Touchdown Pub & Grill</span></h1>
+            <p class="text-xl mb-8 max-w-2xl font-light">Experience the flame, the game, and the vibe. Best grilled meats in the city.</p>
+            <a href="https://wa.me/0966414149" class="bg-sizzle hover:scale-105 transition-transform px-8 py-4 rounded-full text-lg font-bold flex items-center gap-2">
+                <i class="fab fa-whatsapp text-2xl"></i> ORDER VIA WHATSAPP
+            </a>
+        </div>
     </header>
 
     <section class="py-12 bg-char text-white">
@@ -67,15 +103,14 @@
     </section>
 
     <section id="menu" class="py-16 container mx-auto px-4">
-        <h2 class="text-4xl font-black mb-12 text-center uppercase">Our Menu</h2>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <h2 class="text-4xl font-black mb-12 text-center uppercase border-b-4 border-sizzle inline-block w-full pb-4">Our Menu</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mt-8">
             <div>
                 <h3 class="text-2xl font-bold border-b-2 border-sizzle mb-6">Signature Platters</h3>
                 <div class="space-y-6">
                     <div class="flex justify-between items-start">
                         <div>
-                            <h4 class="font-bold text-lg italic">The Touchdown Platter <span class="bg-mustard text-xs px-2 py-1 rounded ml-2">POPULAR</span></h4>
+                            <h4 class="font-bold text-lg italic">The Touchdown Platter <span class="bg-mustard text-xs px-2 py-1 rounded ml-2 text-black">POPULAR</span></h4>
                             <p class="text-sm text-gray-600">Full rack of ribs, 6 wings, steak strips, and loaded fries.</p>
                         </div>
                         <span class="font-bold text-sizzle">K45.00</span>
@@ -89,7 +124,6 @@
                     </div>
                 </div>
             </div>
-
             <div>
                 <h3 class="text-2xl font-bold border-b-2 border-sizzle mb-6">From The Grill</h3>
                 <div class="space-y-6">
@@ -112,71 +146,37 @@
         </div>
     </section>
 
-    <section class="py-16 bg-white">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl font-black mb-8 uppercase">Catch the Vibe</h2>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-2">
-                <div class="aspect-square bg-gray-200 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&q=80&w=400" alt="Cocktail" class="w-full h-full object-cover">
-                </div>
-                <div class="aspect-square bg-gray-200 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?auto=format&fit=crop&q=80&w=400" alt="Ribs" class="w-full h-full object-cover">
-                </div>
-                <div class="aspect-square bg-gray-200 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1543007630-9710e4a00a20?auto=format&fit=crop&q=80&w=400" alt="Bar" class="w-full h-full object-cover">
-                </div>
-                <div class="aspect-square bg-gray-200 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1572116469696-31de0f17cc34?auto=format&fit=crop&q=80&w=400" alt="Seating" class="w-full h-full object-cover">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-16 container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-12">
-        <div>
-            <h3 class="text-2xl font-black mb-6 uppercase">What the Fans Say</h3>
-            <div class="bg-white p-6 rounded shadow-sm italic border-l-4 border-mustard mb-4">
-                "The best wings I've had in years. The atmosphere during the game was electric!"
-                <p class="mt-2 font-bold not-italic text-sm">— James G. (Facebook Review)</p>
-            </div>
-            <div class="bg-white p-6 rounded shadow-sm italic border-l-4 border-mustard">
-                "VIP Chalets are worth every penny for a birthday party."
-                <p class="mt-2 font-bold not-italic text-sm">— Sarah M. (Google Maps)</p>
-            </div>
-        </div>
-        <div>
-            <h3 class="text-2xl font-black mb-6 uppercase">Book a VIP Space</h3>
-            <form class="space-y-4">
-                <input type="text" placeholder="Your Name" class="w-full p-3 bg-white border border-gray-300 rounded">
-                <input type="email" placeholder="Email Address" class="w-full p-3 bg-white border border-gray-300 rounded">
-                <select class="w-full p-3 bg-white border border-gray-300 rounded">
-                    <option>Party Size: 1-4</option>
-                    <option>Party Size: 5-10</option>
-                    <option>Party Size: 10+ (VIP Request)</option>
-                </select>
-                <button class="w-full bg-char text-white font-bold py-3 rounded hover:bg-black transition-colors">REQUEST BOOKING</button>
-            </form>
-        </div>
-    </section>
-
     <footer class="bg-char text-white py-12 text-center">
-        <p class="opacity-50 text-sm">© 2024 The Touchdown Pub&Grill. All Rights Reserved.</p>
+        <p class="opacity-50 text-sm">© 2024 The Touchdown Pub & Grill. All Rights Reserved.</p>
     </footer>
 
-    <nav class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 flex justify-around items-center py-3 sticky-nav md:hidden">
+    <nav class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 flex justify-around items-center py-3 sticky-nav md:hidden z-50">
         <a href="#menu" class="flex flex-col items-center text-char-charcoal">
             <i class="fas fa-utensils text-xl"></i>
             <span class="text-[10px] font-bold uppercase mt-1">Menu</span>
         </a>
-        <a href="tel:+1234567890" class="flex flex-col items-center text-sizzle">
+        <a href="tel:0966414149" class="flex flex-col items-center text-sizzle">
             <i class="fas fa-phone-alt text-xl"></i>
             <span class="text-[10px] font-bold uppercase mt-1">Call Us</span>
         </a>
-        <a href="https://maps.google.com" target="_blank" class="flex flex-col items-center text-char-charcoal">
+        <a href="#" class="flex flex-col items-center text-char-charcoal">
             <i class="fas fa-map-marker-alt text-xl"></i>
             <span class="text-[10px] font-bold uppercase mt-1">Location</span>
         </a>
     </nav>
 
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        
+        function nextSlide() {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+
+        // Change image every 4 seconds
+        setInterval(nextSlide, 4000);
+    </script>
 </body>
 </html>
