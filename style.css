@@ -1,0 +1,47 @@
+/* Custom Brand Variables */
+:root {
+  --sizzle-orange: #D35400;
+  --char-charcoal: #2C3E50;
+  --mustard-yellow: #F1C40F;
+  --soft-cream: #ECF0F1;
+}
+
+/* Smooth Scrolling for the Menu link */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Hero Video/Image Zoom Effect */
+.hero-gradient {
+  transition: background-size 0.5s ease;
+  background-size: 100%;
+}
+
+.hero-gradient:hover {
+  background-size: 105%;
+}
+
+/* Custom Scrollbar for a sleek 'Pub' feel */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--char-charcoal);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--sizzle-orange);
+  border-radius: 10px;
+}
+
+/* Button Pulse for the WhatsApp Order Button */
+.btn-pulse {
+  animation: pulse-orange 2s infinite;
+}
+
+@keyframes pulse-orange {
+  0% { box-shadow: 0 0 0 0 rgba(211, 84, 0, 0.7); }
+  70% { box-shadow: 0 0 0 15px rgba(211, 84, 0, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(211, 84, 0, 0); }
+}

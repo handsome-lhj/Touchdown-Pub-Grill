@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Home of the Touchdown Platter</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --sizzle-orange: #D35400;
+            --char-charcoal: #2C3E50;
+            --mustard-yellow: #F1C40F;
+            --soft-cream: #ECF0F1;
+        }
+        body {
+            background-color: var(--soft-cream);
+            color: var(--char-charcoal);
+            font-family: 'Inter', sans-serif;
+        }
+        .bg-sizzle { background-color: var(--sizzle-orange); }
+        .text-sizzle { color: var(--sizzle-orange); }
+        .bg-char { background-color: var(--char-charcoal); }
+        .bg-mustard { background-color: var(--mustard-yellow); }
+        
+        .hero-gradient {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&q=80&w=1920');
+            background-size: cover;
+            background-position: center;
+        }
+        .sticky-nav {
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body class="pb-20">
+
+    <header class="hero-gradient h-screen flex flex-col items-center justify-center text-center text-white px-4">
+        <h1 class="text-5xl md:text-7xl font-black mb-4 uppercase tracking-tighter">The Home of the <span class="text-mustard">Touchdown Platter</span></h1>
+        <p class="text-xl mb-8 max-w-2xl font-light">Experience the flame, the game, and the vibe. Best grilled meats in the city.</p>
+        <a href="https://wa.me/1234567890" class="bg-sizzle hover:scale-105 transition-transform px-8 py-4 rounded-full text-lg font-bold flex items-center gap-2">
+            <i class="fab fa-whatsapp text-2xl"></i> ORDER VIA WHATSAPP
+        </a>
+    </header>
+
+    <section class="py-12 bg-char text-white">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="h-3 w-3 bg-red-600 rounded-full animate-pulse"></div>
+                <h2 class="text-2xl font-bold uppercase tracking-widest">Live This Week</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="bg-gray-800 p-4 border-l-4 border-mustard">
+                    <p class="text-sm text-gray-400">SATURDAY • 15:00</p>
+                    <p class="font-bold">Premier League: Man City vs Liverpool</p>
+                </div>
+                <div class="bg-gray-800 p-4 border-l-4 border-mustard">
+                    <p class="text-sm text-gray-400">SATURDAY • 20:00</p>
+                    <p class="font-bold">Rugby Championship: Finals</p>
+                </div>
+                <div class="bg-gray-800 p-4 border-l-4 border-mustard">
+                    <p class="text-sm text-gray-400">SUNDAY • 18:00</p>
+                    <p class="font-bold">Formula 1: Grand Prix</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="menu" class="py-16 container mx-auto px-4">
+        <h2 class="text-4xl font-black mb-12 text-center uppercase">Our Menu</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div>
+                <h3 class="text-2xl font-bold border-b-2 border-sizzle mb-6">Signature Platters</h3>
+                <div class="space-y-6">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h4 class="font-bold text-lg italic">The Touchdown Platter <span class="bg-mustard text-xs px-2 py-1 rounded ml-2">POPULAR</span></h4>
+                            <p class="text-sm text-gray-600">Full rack of ribs, 6 wings, steak strips, and loaded fries.</p>
+                        </div>
+                        <span class="font-bold text-sizzle">$45.00</span>
+                    </div>
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h4 class="font-bold text-lg italic">The Quarterback Snack</h4>
+                            <p class="text-sm text-gray-600">Beef sliders, onion rings, and a side of spicy mayo.</p>
+                        </div>
+                        <span class="font-bold text-sizzle">$22.00</span>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="text-2xl font-bold border-b-2 border-sizzle mb-6">From The Grill</h3>
+                <div class="space-y-6">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h4 class="font-bold text-lg italic">Flame-Grilled T-Bone</h4>
+                            <p class="text-sm text-gray-600">500g Prime beef basted in our secret pub sauce.</p>
+                        </div>
+                        <span class="font-bold text-sizzle">$32.00</span>
+                    </div>
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h4 class="font-bold text-lg italic">Peri-Peri Half Chicken</h4>
+                            <p class="text-sm text-gray-600">Slow roasted over charcoal with mild or hot glaze.</p>
+                        </div>
+                        <span class="font-bold text-sizzle">$18.00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-black mb-8 uppercase">Catch the Vibe</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-2">
+                <div class="aspect-square bg-gray-200 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&q=80&w=400" alt="Cocktail" class="w-full h-full object-cover">
+                </div>
+                <div class="aspect-square bg-gray-200 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?auto=format&fit=crop&q=80&w=400" alt="Ribs" class="w-full h-full object-cover">
+                </div>
+                <div class="aspect-square bg-gray-200 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1543007630-9710e4a00a20?auto=format&fit=crop&q=80&w=400" alt="Bar" class="w-full h-full object-cover">
+                </div>
+                <div class="aspect-square bg-gray-200 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1572116469696-31de0f17cc34?auto=format&fit=crop&q=80&w=400" alt="Seating" class="w-full h-full object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div>
+            <h3 class="text-2xl font-black mb-6 uppercase">What the Fans Say</h3>
+            <div class="bg-white p-6 rounded shadow-sm italic border-l-4 border-mustard mb-4">
+                "The best wings I've had in years. The atmosphere during the game was electric!"
+                <p class="mt-2 font-bold not-italic text-sm">— James G. (Facebook Review)</p>
+            </div>
+            <div class="bg-white p-6 rounded shadow-sm italic border-l-4 border-mustard">
+                "VIP Chalets are worth every penny for a birthday party."
+                <p class="mt-2 font-bold not-italic text-sm">— Sarah M. (Google Maps)</p>
+            </div>
+        </div>
+        <div>
+            <h3 class="text-2xl font-black mb-6 uppercase">Book a VIP Space</h3>
+            <form class="space-y-4">
+                <input type="text" placeholder="Your Name" class="w-full p-3 bg-white border border-gray-300 rounded">
+                <input type="email" placeholder="Email Address" class="w-full p-3 bg-white border border-gray-300 rounded">
+                <select class="w-full p-3 bg-white border border-gray-300 rounded">
+                    <option>Party Size: 1-4</option>
+                    <option>Party Size: 5-10</option>
+                    <option>Party Size: 10+ (VIP Request)</option>
+                </select>
+                <button class="w-full bg-char text-white font-bold py-3 rounded hover:bg-black transition-colors">REQUEST BOOKING</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="bg-char text-white py-12 text-center">
+        <p class="opacity-50 text-sm">© 2024 The Touchdown Platter. All Rights Reserved.</p>
+    </footer>
+
+    <nav class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 flex justify-around items-center py-3 sticky-nav md:hidden">
+        <a href="#menu" class="flex flex-col items-center text-char-charcoal">
+            <i class="fas fa-utensils text-xl"></i>
+            <span class="text-[10px] font-bold uppercase mt-1">Menu</span>
+        </a>
+        <a href="tel:+1234567890" class="flex flex-col items-center text-sizzle">
+            <i class="fas fa-phone-alt text-xl"></i>
+            <span class="text-[10px] font-bold uppercase mt-1">Call Us</span>
+        </a>
+        <a href="https://maps.google.com" target="_blank" class="flex flex-col items-center text-char-charcoal">
+            <i class="fas fa-map-marker-alt text-xl"></i>
+            <span class="text-[10px] font-bold uppercase mt-1">Location</span>
+        </a>
+    </nav>
+
+</body>
+</html>
